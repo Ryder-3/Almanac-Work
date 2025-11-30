@@ -19,14 +19,13 @@ position = "at"
 payload = ""
 match_indent = true
 
-# COMMENTED OUT: Talisman already patches this for big numbers
-# [[patches]]
-# [patches.pattern]
-# target = "functions/common_events.lua"
-# pattern = "if amt > 0 or amt < 0 then"
-# position = "at"
-# payload = "if to_big(amt) > to_big(0) or to_big(amt) < to_big(0) then"
-# match_indent = true
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "if amt > 0 or amt < 0 then"
+position = "at"
+payload = "if to_big(amt) > to_big(0) or to_big(amt) < to_big(0) then"
+match_indent = true
 
 # COMMENTED OUT: Hand level color patches - now handled by jl.init_hand_level_colors() metatable system
 # [[patches]]
